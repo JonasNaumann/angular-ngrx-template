@@ -1,4 +1,4 @@
-export interface BaseEntity{
+export interface AuditableEntity{
   createdDate: Date;
   updatedDate: Date;
 }

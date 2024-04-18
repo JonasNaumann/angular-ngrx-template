@@ -1,6 +1,6 @@
-import { BaseEntity } from 'src/app/core/models/base-entity';
+import { AuditableEntity } from 'src/app/core/models/auditable-entity';
 
-export interface User extends BaseEntity {
+export interface User extends AuditableEntity {
   id: string;
   firstName: string;
   lastName: string;

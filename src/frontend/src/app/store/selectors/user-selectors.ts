@@ -3,14 +3,14 @@ import { UserState } from '../reducers/user-reducer';
 
 export const selectUserState = createFeatureSelector<UserState>('user');
 
-//select all users
-export const selectUsers = createSelector(
-  selectUserState,
-  (state: UserState) => state.users
-);
-
-//select active user
+// select active user
 export const selectActiveUser = createSelector(
   selectUserState,
   (state: UserState) => state.activeUser
+);
+
+// select loading state of user
+export const selectLoadingState = createSelector(
+  selectUserState,
+  (state: UserState) => state.isLoading
 );
