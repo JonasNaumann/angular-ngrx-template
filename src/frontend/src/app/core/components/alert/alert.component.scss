@@ -1,0 +1,19 @@
+@use '../../../shared/components/footer/footer.component.scss' as *;
+
+$alert-margin: 15px;
+
+.alert{
+  z-index: 1;
+  bottom: calc($footer-height + $alert-margin);
+  right: $alert-margin;
+  position: fixed;
+  width: 25%;
+  max-width: 400px;
+  animation: fade-out 1s ease-in-out forwards;
+  animation-delay: var(--alert-duration);
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

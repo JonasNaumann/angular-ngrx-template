@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { ThrownError } from 'src/app/core/services/error.service';
 import { User } from 'src/app/shared/models/user';
 
 export enum UserActionTypes {
@@ -26,7 +25,6 @@ export class LoadActiveUserSuccess implements Action {
 
 export class LoadActiveUserFailed implements Action {
   readonly type = UserActionTypes.LoadActiveUserFailed;
-  constructor(public payload: ThrownError) {}
 }
 
 //update a user
@@ -42,7 +40,6 @@ export class UpdateUserSuccess implements Action {
 
 export class UpdateUserFailed implements Action {
   readonly type = UserActionTypes.UpdateUserFailed;
-  constructor(public payload: ThrownError) {}
 }
 
 //delete a user
@@ -58,7 +55,6 @@ export class DeleteUserSuccess implements Action {
 
 export class DeleteUserFailed implements Action {
   readonly type = UserActionTypes.DeleteUserFailed;
-  constructor(public payload: ThrownError) {}
 }
 
 export type UserActions =

@@ -13,7 +13,8 @@ import {
   UserActionTypes,
 } from '../actions/user-actions';
 import { UserService } from 'src/app/core/services/user.service';
-import { ErrorService, ThrownError } from 'src/app/core/services/error.service';
+import { ShowAlert } from '../actions/alert-actions';
+import { AlertService } from 'src/app/core/services/alert.service';
 
 @Injectable()
 export class UserEffects {
@@ -24,8 +25,8 @@ export class UserEffects {
         this.userService.getActiveUser().pipe(
           map((user) => new LoadActiveUserSuccess(user)),
           catchError((error: unknown) => {
-            this.errorService.handleError(error as ThrownError);
-            return of(new LoadActiveUserFailed(error as ThrownError));
+            new ShowAlert(this.alertService.mapErrorToAlert(error));
+            return of(new LoadActiveUserFailed());
           })
         )
       )
@@ -39,8 +40,8 @@ export class UserEffects {
         this.userService.updateUser(action.payload).pipe(
           map((user) => new UpdateUserSuccess(user)),
           catchError((error: unknown) => {
-            this.errorService.handleError(error as ThrownError);
-            return of(new UpdateUserFailed(error as ThrownError));
+            new ShowAlert(this.alertService.mapErrorToAlert(error));
+            return of(new UpdateUserFailed());
           })
         )
       )
@@ -54,8 +55,8 @@ export class UserEffects {
         this.userService.deleteUser(action.payload).pipe(
           map((id) => new DeleteUserSuccess(id)),
           catchError((error: unknown) => {
-            this.errorService.handleError(error as ThrownError);
-            return of(new DeleteUserFailed(error as ThrownError));
+            new ShowAlert(this.alertService.mapErrorToAlert(error));
+            return of(new DeleteUserFailed());
           })
         )
       )
@@ -65,6 +66,6 @@ export class UserEffects {
   constructor(
     private actions$: Actions,
     private userService: UserService,
-    private errorService: ErrorService
+    private alertService: AlertService
   ) {}
 }
