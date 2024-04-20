@@ -6,7 +6,7 @@ import {
   selectAlert,
   selectAlertVisible,
 } from 'src/app/store/selectors/alert-selectors';
-import { Alert } from '../../models/alert';
+import { Alert } from '../../../core/models/alert';
 import { CommonModule } from '@angular/common';
 import { AlertCategory } from 'src/app/shared/enums/alert-category';
 

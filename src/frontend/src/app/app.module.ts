@@ -12,8 +12,8 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavComponent } from './shared/components/nav/nav.component';
-import { AlertComponent } from './core/components/alert/alert.component';
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],

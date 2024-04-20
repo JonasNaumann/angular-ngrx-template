@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Observable, Subject, of, takeUntil } from 'rxjs';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AppRoutingModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
 })

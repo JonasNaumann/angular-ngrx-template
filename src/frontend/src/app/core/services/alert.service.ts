@@ -13,4 +13,13 @@ export class AlertService {
       message: (error as Alert).message,
     };
   }
+
+  // initialised inside styles.scss
+  public getAlertDuration(): number {
+    return +(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--alert-duration')
+        .replace('s', '') + '000'
+    );
+  }
 }
