@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavComponent } from './shared/components/nav/nav.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
+import { auth } from './secrets';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
@@ -30,8 +31,8 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     }),
     EffectsModule.forRoot(effects),
     AuthModule.forRoot({
-      domain: 'dev-r00awbyb08izt18p.us.auth0.com',
-      clientId: 'gVOLd9JHtfA3Lhx5NNhHZ4oHJJwyYBRx',
+      domain: auth.domain,
+      clientId: auth.clientId,
     }),
   ],
   providers: [],
