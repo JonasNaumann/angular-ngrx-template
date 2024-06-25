@@ -14,7 +14,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavComponent } from './shared/components/nav/nav.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
-import { auth } from './secrets';
+import { AUTH_SECRETS } from './secrets';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
@@ -31,8 +31,8 @@ import { auth } from './secrets';
     }),
     EffectsModule.forRoot(effects),
     AuthModule.forRoot({
-      domain: auth.domain,
-      clientId: auth.clientId,
+      domain: AUTH_SECRETS.domain,
+      clientId: AUTH_SECRETS.clientId,
     }),
   ],
   providers: [],
