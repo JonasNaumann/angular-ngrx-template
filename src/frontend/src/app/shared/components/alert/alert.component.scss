@@ -1,10 +1,8 @@
-@use '../../../shared/components/footer/footer.component.scss' as *;
-
-$alert-margin: 15px;
+$alert-margin: 25px;
 
 .alert{
   z-index: 1;
-  bottom: calc($footer-height + $alert-margin);
+  margin-top: $alert-margin;
   right: $alert-margin;
   position: fixed;
   width: 25%;
